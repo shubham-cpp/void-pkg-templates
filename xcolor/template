@@ -1,0 +1,19 @@
+# Template file for 'xcolor'
+pkgname=xcolor
+version=0.4.0
+revision=1
+archs="x86_64"
+build_style=cargo
+depends="libxcb"
+makedepends="libxcb-devel"
+hostmakedepends="rust python3"
+short_desc="Simple X color picker utility written in Rust"
+maintainer="Shubham Pawar <shubhampawar3007@gmail.com>"
+license="MIT"
+homepage="https://github.com/Soft/xcolor"
+distfiles="https://github.com/Soft/xcolor/archive/${version}.tar.gz"
+checksum=35e8eaadeb53d77f90869af4e97bd2253a73f438624c7ce6ee7156d12bb83fce
+post_install() {
+	vman man/xcolor.1
+	vlicense LICENSE
+}

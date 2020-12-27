@@ -1,0 +1,16 @@
+# Template file for 'sls'
+pkgname=sls
+version=0.2.0
+revision=3
+build_style=gnu-makefile
+short_desc="Extremely simple su utility"
+maintainer="Dash Eclipse <dash@ezup.dev>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/illiliti/sls"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum="3585b430ae55eb8f50768d5892827d607a0e6bda84b79169a3cbf9e226590866"
+tags="ezup"
+
+post_install() {
+	chmod u+s ${DESTDIR}/usr/bin/sls
+}

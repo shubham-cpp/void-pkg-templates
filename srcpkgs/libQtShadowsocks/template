@@ -1,0 +1,26 @@
+# Template file for 'libQtShadowsocks'
+pkgname=libQtShadowsocks
+version=2.1.0
+revision=1
+archs="x86_64"
+build_style=cmake
+configure_args=" -DCMAKE_INSTALL_PREFIX=${DESTDIR}/usr"
+hostmakedepends="qt5-qmake qt5-host-tools"
+makedepends="qt5-devel botan-devel qt5-core botan pkg-config"
+short_desc="Lightweight library for shadowsocks"
+maintainer="mkf <makefile@riseup.net>"
+license="LGPL-3.0-only"
+homepage="https://github.com/shadowsocks/libQtShadowsocks"
+distfiles="https://github.com/shadowsocks/libQtShadowsocks/archive/v${version}.tar.gz"
+checksum=1fc575b9723f52e00f3d7186d6e4846caf1af07b70ccdbe405f538340cd320b2
+
+libQtShadowsocks-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		ln usr/lib/
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+	}
+}

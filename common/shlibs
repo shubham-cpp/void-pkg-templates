@@ -4040,3 +4040,4 @@ libndr-samba4.so samba-libs-4.13.2_1
 libsmb-transport-samba4.so samba-libs-4.13.2_1
 libutil-cmdline-samba4.so samba-libs-4.13.2_1
 libwinbind-client-samba4.so samba-libs-4.13.2_1
+libQtShadowsocks.so.2 libQtShadowsocks-2.1.0_1

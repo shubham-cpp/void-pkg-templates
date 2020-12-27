@@ -1,0 +1,37 @@
+# Template file for 'ungoogled-chromium-marmaduke'
+_chromiumRevision=812852
+
+pkgname=ungoogled-chromium-marmaduke
+version=87.0.4280.66
+revision=1
+maintainer="mkf <makefile@riseup.net>"
+homepage="https://github.com/macchrome/linchrome"
+license="BSD-3-Clause"
+short_desc="Ungoogled chromium build from mamranduke"
+archs="x86_64"
+nostrip="yes"
+hostmakedepends="tar xz"
+make_dirs="/opt/${pkgename} 755 root root"
+_baseUrl="https://github.com/macchrome/linchrome/releases/download"
+_filename="v${version}-r${_chromiumRevision}-portable-ungoogled-Lin64/ungoogled-chromium_${version}_1.vaapi_linux.tar.xz"
+_chromiumUrl="${_baseUrl}/${_filename}"
+distfiles="$_chromiumUrl"
+checksum=167ce98335c28fce0ac6f71194851e897de70310779e2e5549b597f9dac62949
+_licenseUrl="https://raw.githubusercontent.com/chromium/chromium/master/LICENSE"
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	tar xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/ungoogled-chromium_${version}_1.vaapi_linux.tar.xz -C ${DESTDIR}
+}
+
+do_install() {
+	vmkdir opt/${pkgname}/
+	vmkdir usr/share/applications
+	mv ${DESTDIR}/ungoogled-chromium_${version}_1.vaapi_linux/* ${DESTDIR}/opt/${pkgname}
+	vmkdir usr/bin
+	ln -rs ${DESTDIR}/opt/${pkgname}/chrome ${DESTDIR}/usr/bin/${pkgname}
+}
+post_install() {
+	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications
+	vlicense ${FILESDIR}/LICENSE
+}

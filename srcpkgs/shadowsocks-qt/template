@@ -1,0 +1,34 @@
+# Template file for 'shadowsocks-qt'
+pkgname=shadowsocks-qt
+version=3.0.1
+revision=1
+create_wrksrc=yes
+build_style="cmake"
+hostmakedepends="curl tar xz"
+makedepends="cmake pkg-config qt5-dbus qt5-network qt5-core qt5-gui qt5-devel libQtShadowsocks-devel qrencode-devel libzbar-devel"
+depends="libQtShadowsocks"
+short_desc="Fast, reliable and cross-platform GUI fronted for Shadowsocks"
+maintainer="mkf <makefile@riseup.net>"
+license="LGPL-3.0-only"
+homepage="https://github.com/shadowsocks/shadowsocks-qt5"
+distfiles="https://github.com/shadowsocks/shadowsocks-qt5/archive/v${version}.tar.gz"
+checksum=a4dbfc49b50f9fb14cc9025e7d7c8b22fd0dda7de224e5d7b7cc7f32a8ad1146
+nostrip=yes
+tags="shadowsocks qt"
+do_patch() {
+	cd ${wrksrc}/shadowsocks-qt5-${version}
+	sed -i '/APPINDICATOR/d' CMakeLists.txt
+}
+do_configure() {
+	cd ${wrksrc}/shadowsocks-qt5-${version}
+	cmake -DCMAKE_INSTALL_PREFIX=${DESTDIR}/usr -DCMAKE_BUILD_TYPE=Release .
+
+}
+do_build() {
+	cd ${wrksrc}/shadowsocks-qt5-${version}
+	make
+}
+do_install() {
+	cd ${wrksrc}/shadowsocks-qt5-${version}
+	make install
+}

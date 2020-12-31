@@ -4,12 +4,13 @@ _chromiumRevision=1.1
 
 pkgname=ungoogled-chromium-eloston
 version=87.0.4280.88
-revision=1
+revision=2
 maintainer="mkf <makefile@riseup.net>"
 homepage="https://github.com/Eloston/ungoogled-chromium"
 license="BSD-3-Clause"
 short_desc="Ungoogled chromium build from eloston"
 archs="x86_64"
+create_wrksrc=yes
 nostrip="yes"
 hostmakedepends="tar xz"
 make_dirs="/opt/${pkgname} 755 root root"
@@ -19,17 +20,12 @@ _chromiumUrl="${_baseUrl}/${_filename}"
 distfiles="$_chromiumUrl"
 checksum="76604aff59111b3cdfc2c84c00909fcf78fa77115bfe80a4075bba2c40aac446"
 
-do_extract() {
-	mkdir -p ${DESTDIR}
-	tar xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/ungoogled-chromium_${version}-${_chromiumRevision}_linux.tar.xz -C ${DESTDIR}
-}
-
 do_install() {
 	vmkdir opt/${pkgname}/
 	vmkdir usr/share/applications
-	mv ${DESTDIR}//ungoogled-chromium_${version}-${_chromiumRevision}_linux/* ${DESTDIR}/opt/${pkgname}
+	mv ${wrksrc}/* ${DESTDIR}/opt/${pkgname}
 	vmkdir usr/bin
-	ln -rs ${DESTDIR}/opt/${pkgname}/chrome ${DESTDIR}/usr/bin/${pkgname}
+	ln -rs ${DESTDIR}/opt/${pkgname}/chrome-wrapper ${DESTDIR}/usr/bin/${pkgname}
 }
 post_install() {
 	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications

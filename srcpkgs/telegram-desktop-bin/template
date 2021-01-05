@@ -1,7 +1,7 @@
 # Template file for 'telegram-desktop-bin'
 pkgname=telegram-desktop-bin
 version=2.5.1
-revision=1
+revision=2
 archs="x86_64"
 makedepends="tar xz"
 depends="desktop-file-utils glib hicolor-icon-theme dbus-glib dbus libX11"
@@ -19,7 +19,7 @@ do_extract() {
 }
 
 do_install() {
-	vbin ${DESTDIR}/Telegram/Telegram telegram
+	vbin ${DESTDIR}/Telegram/Telegram telegram-desktop-bin
 	vmkdir usr/share/applications
 	rm -rf ${DESTDIR}/Telegram
 }

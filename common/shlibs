@@ -541,7 +541,7 @@ libakonadi-filestore.so.5 kdepim-runtime-17.12.3_1
 libmaildir.so.5 kdepim-runtime-17.12.3_1
 libfolderarchivesettings.so.5 kdepim-runtime-17.12.3_1
 libkColorPicker.so.0.1.4 kColorPicker-0.1.4_1
-libkImageAnnotator.so.0.3.2 kImageAnnotator-0.3.2_1
+libkImageAnnotator.so.0.4.0 kImageAnnotator-0.4.0_1
 libbabl-0.1.so.0 babl-0.1.16_1
 libbamf3.so.2 bamf-0.5.1_1
 libicuio.so.67 icu-libs-67.1_1
@@ -1381,7 +1381,7 @@ libkworkspace5.so.5 kworkspace-5.14.5_2
 libdb-5.3.so libdb-5.3.21_1
 libdb_cxx-5.3.so libdb-cxx-5.3.21_1
 libcares.so.2 c-ares-1.10.0_1
-libcryptopp.so.8 crypto++-820_1
+libcryptopp.so.8 crypto++-8.3.0_1
 libdbusmenu-glib.so.4 libdbusmenu-glib-12.10.2_1
 libdbusmenu-gtk3.so.4 libdbusmenu-gtk3-12.10.2_1
 libGrantlee_Templates.so.5 grantlee5-5.0.0_1
@@ -3175,7 +3175,7 @@ libvted-3.so.0 libvted-3.7.0_2
 libpeasd-3.so.0 libpeasd-3.7.0_2
 libgstreamerd-3.so.0 libgstreamerd-3.7.0_2
 libgtkdgl-3.so.0 libgtkdgl-3.7.0_2
-libmega.so.30602 MEGAsdk-3.6.2a_1
+libmega.so.30703 MEGAsdk-3.7.3c_1
 libopenglrecorder.so.0 libopenglrecorder-0.1.0_1
 libgpod.so.4 libgpod-0.8.3_1
 libi2c.so.0 i2c-tools-4.0_1
@@ -3630,7 +3630,7 @@ libcaf_openssl.so.0.17.6 zeek-3.2.0_1
 libbinpac.so.0 zeek-3.1.1_1
 libllhttp.so.1 llhttp-1.0.1_1
 libpinyin.so.13 libpinyin-2.2.1_1
-libuhd.so.3.15.0 uhd-3.15.0.0_1
+libuhd.so.4.0.0 uhd-4.0.0.0_1
 libeditline.so.1 editline-1.16.0_1
 libgnuradio-rds.so.1 gnuradio-rds-3.8.0_1
 libgnuradio-nrsc5-1.0.0git.so.0.0.0 gnuradio-nrsc5-1.0.0_1
@@ -3697,7 +3697,7 @@ libbitcoin-server.so.0 libbitcoin-server-3.5.0_1
 libvpd-2.2.so.2 libvpd-2.2.6_1
 libvpd_cxx-2.2.so.2 libvpd-2.2.6_1
 liblcf.so.0 liblcf-0.6.0_1
-liboblibs.so.0.0 oblibs-0.0.1.1_1
+liboblibs.so.0.1 oblibs-0.1.1.1_1
 libaal-1.0.so.7 libaal-1.0.7_1
 libaal-minimal.so.0 libaal-1.0.7_1
 libcli.so.1.9 libcli-1.9.8.4_1
@@ -3717,7 +3717,7 @@ libircclient.so.1 libircclient-1.10_1
 libFAudio.so.0 FAudio-19.05_1
 libqaccessibilityclient-qt5.so.0 libqaccessibilityclient-0.4.0_1
 libnitrokey.so.3 libnitrokey-3.4.1_1
-libceres.so.1 ceres-solver-1.14.0_1
+libceres.so.2 ceres-solver-2.0.0_1
 libgraphene-1.0.so.0 graphene-1.8.2_1
 libflite.so.1 flite-2.1_1
 libflite_cmu_us_kal.so.1 flite-2.1_1
@@ -4004,15 +4004,19 @@ libnss_winbind.so.2 samba-4.13.2_1
 libnss_wins.so.2 samba-4.13.2_1
 libsamba-policy.so.0 samba-4.13.2_1
 libauth-unix-token-samba4.so samba-4.13.2_1
+libauth4-samba4.so samba-4.13.3_1
 libdcerpc-samba4.so samba-4.13.2_1
 libdsdb-module-samba4.so samba-4.13.2_1
 libgpext-samba4.so samba-4.13.2_1
+libnet-keytab-samba4.so samba-4.13.3_1
 libposix-eadb-samba4.so samba-4.13.2_1
 libprinting-migrate-samba4.so samba-4.13.2_1
 libsamba-net-samba4.so samba-4.13.2_1
+libsamba-python-samba4.so samba-4.13.3_1
 libshares-samba4.so samba-4.13.2_1
 libsmbd-base-samba4.so samba-4.13.2_1
 libsmbd-conn-samba4.so samba-4.13.2_1
+libsmbpasswordparser-samba4.so samba-4.13.3_1
 libxattr-tdb-samba4.so samba-4.13.2_1
 libdcerpc.so.0 samba-libs-4.13.2_1
 libdcerpc-binding.so.0 samba-libs-4.13.2_1
@@ -4032,12 +4036,20 @@ libsmbldap.so.2 samba-libs-4.13.2_1
 libwbclient.so.0 samba-libs-4.13.2_1
 libcli-ldap-samba4.so samba-libs-4.13.2_1
 libcliauth-samba4.so samba-libs-4.13.2_1
+libcluster-samba4.so samba-libs-4.13.3_1
 libcommon-auth-samba4.so samba-libs-4.13.2_1
 libdcerpc-samba-samba4.so samba-libs-4.13.2_1
+libflag-mapping-samba4.so samba-libs-4.13.3_1
 libgpo-samba4.so samba-libs-4.13.2_1
+libiov-buf-samba4.so samba-libs-4.13.3_1
 libndr-samba-samba4.so samba-libs-4.13.2_1
 libndr-samba4.so samba-libs-4.13.2_1
+libprinter-driver-samba4.so samba-libs-4.13.3_1
 libsmb-transport-samba4.so samba-libs-4.13.2_1
+libtdb-wrap-samba4.so samba-libs-4.13.3_1
 libutil-cmdline-samba4.so samba-libs-4.13.2_1
 libwinbind-client-samba4.so samba-libs-4.13.2_1
 libQtShadowsocks.so.2 libQtShadowsocks-2.1.0_1
+liblsi-redirect.so linux-steam-integration-0.7.3_1
+liblsi-intercept.so linux-steam-integration-0.7.3_1
+

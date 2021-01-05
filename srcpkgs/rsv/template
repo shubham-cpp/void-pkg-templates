@@ -1,8 +1,7 @@
 # Template file for 'rsv'
 pkgname=rsv
 version=1.3.3
-revision=1
-archs="i686 x86_64"
+revision=2
 build_style=cargo
 short_desc="Runit sv command rewritten in rust with nice new features"
 maintainer="mkf <makefile@riseup.net>"

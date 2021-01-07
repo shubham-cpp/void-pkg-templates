@@ -1,17 +1,30 @@
 # Template file for 'starship'
 pkgname=starship
 version=0.47.0
-revision=1
-archs="x86_64*"
+revision=2
 build_style=cargo
-makedepends="pkg-config libressl-devel"
-short_desc="Minimal, blazing-fast, and infinitely customizable prompt"
-maintainer="mkf <makefile@riseup.net>"
+build_helper=qemu
+hostmakedepends="pkg-config"
+makedepends="libgit2-devel"
+checkdepends="git"
+short_desc="Minimal, fast and customizable cross-shell prompt"
+maintainer="make-file <make-file@riseup.net>"
 license="ISC"
-homepage="https://starship.rs/"
+homepage="https://starship.rs"
 distfiles="https://github.com/starship/starship/archive/v${version}.tar.gz"
 checksum=9c9ede1eb7a9e1acf49f0321915232426c234b356c6bb1f740d15d6fa45d1bee
-do_install() {
-	vbin "${wrksrc}/target/${XBPS_TARGET_MACHINE}-unknown-linux-gnu/release/starship"
-	vlicense ${FILESDIR}/LICENSE
+
+post_build() {
+	STARSHIP="target/${RUST_TARGET}/release/starship"
+	vtargetrun ${STARSHIP} completions zsh  >starship.zsh
+	vtargetrun ${STARSHIP} completions bash >starship.bash
+	vtargetrun ${STARSHIP} completions fish >starship.fish
+}
+
+post_install() {
+	vcompletion starship.bash bash
+	vcompletion starship.fish fish
+	vcompletion starship.zsh zsh
+
+	vlicense LICENSE
 }

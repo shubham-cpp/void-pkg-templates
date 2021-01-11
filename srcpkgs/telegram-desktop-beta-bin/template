@@ -1,0 +1,25 @@
+# Template file for 'telegram-desktop-beta-bin'
+pkgname=telegram-desktop-beta-bin
+version=2.5.5
+revision=2
+archs="x86_64"
+wrksrc=Telegram
+depends="desktop-file-utils glib hicolor-icon-theme dbus-glib dbus libX11"
+short_desc="Beta verison of telegram desktop- Static binaries"
+maintainer="mkf <makefile@riseup.net>"
+license="GPL-3.0-only, OpenSSL"
+homepage="https://github.com/telegramdesktop/tdesktop"
+distfiles="https://github.com/telegramdesktop/tdesktop/releases/download/v${version}/tsetup.${version}.beta.tar.xz"
+checksum=50900093e2c2bd6ebb26f8738a1797934830761778b0de1de509e994102c2831
+nostrip="yes"
+
+do_install() {
+	vbin ${wrksrc}/Telegram telegram-desktop-beta-bin
+}
+
+post_install() {
+	vmkdir usr/share/applications
+	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications
+	mkdir -p "${DESTDIR}/etc/tdesktop"
+	echo "/usr/bin/telegram-desktop-bin-beta" > "${DESTDIR}/etc/tdesktop/externalupdater"
+}

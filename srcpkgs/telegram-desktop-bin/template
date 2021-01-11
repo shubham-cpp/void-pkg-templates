@@ -1,9 +1,9 @@
 # Template file for 'telegram-desktop-bin'
 pkgname=telegram-desktop-bin
 version=2.5.1
-revision=2
+revision=3
+wrksrc=Telegram
 archs="x86_64"
-makedepends="tar xz"
 depends="desktop-file-utils glib hicolor-icon-theme dbus-glib dbus libX11"
 short_desc="Telegram desktop messaging app - Static binaries"
 maintainer="mkf <makefile@riseup.net>"
@@ -13,18 +13,13 @@ distfiles="https://github.com/telegramdesktop/tdesktop/releases/download/v${vers
 checksum=939275a84498dedb1a33ac3f0242b0211548ddb087f9801518db92c5d6dc0151
 nostrip="yes"
 
-do_extract() {
-	mkdir -p ${DESTDIR}
-	tar xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/tsetup.${version}.tar.xz -C ${DESTDIR}
+do_install() {
+        vbin ${wrksrc}/Telegram ${pkgname}
 }
 
-do_install() {
-	vbin ${DESTDIR}/Telegram/Telegram telegram-desktop-bin
-	vmkdir usr/share/applications
-	rm -rf ${DESTDIR}/Telegram
-}
 post_install() {
+        vmkdir usr/share/applications
 	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications
-	mkdir -p "${DESTDIR}/etc/tdesktop"
-	echo "/usr/bin/telegram-desktop" > "${DESTDIR}/etc/tdesktop/externalupdater"
+        mkdir -p "${DESTDIR}/etc/tdesktop"
+        echo "/usr/bin/telegram-desktop-bin" > "${DESTDIR}/etc/tdesktop/externalupdater"
 }

@@ -2,8 +2,8 @@
 Version=1.0
 Name=Kotatogram Desktop
 Comment=Experimental Telegram Desktop fork
-TryExec=kotatogram-desktop
-Exec=kotatogram-desktop -- %u
+TryExec=kotatogram-desktop-bin
+Exec=kotatogram-desktop-bin -- %u
 Icon=kotatogram
 Terminal=false
 StartupWMClass=KotatogramDesktop

@@ -1,7 +1,7 @@
 # Template file for 'telegram-desktop-beta-bin'
 pkgname=telegram-desktop-beta-bin
 version=2.5.5
-revision=2
+revision=3
 archs="x86_64"
 wrksrc=Telegram
 depends="desktop-file-utils glib hicolor-icon-theme dbus-glib dbus libX11"
@@ -22,4 +22,9 @@ post_install() {
 	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications
 	mkdir -p "${DESTDIR}/etc/tdesktop"
 	echo "/usr/bin/telegram-desktop-bin-beta" > "${DESTDIR}/etc/tdesktop/externalupdater"
+	# install telegram icons
+	for i in 16x16 32x32 48x48 64x64 128x128 256x256 512x512; do
+		vmkdir "usr/share/icons/hicolor/${i}/apps"
+		vinstall ${FILESDIR}/icon${i}.png 644 usr/share/icons/hicolor/${i}/apps/telegram.png
+	done
 }

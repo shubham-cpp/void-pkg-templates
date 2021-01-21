@@ -1,17 +1,17 @@
 # Template file for 'evisum'
 pkgname=evisum
-version=0.5.8
+version=0.5.9
 revision=1
 build_style=meson
 hostmakedepends="pkg-config efl gettext"
 makedepends="efl-devel"
 depends="efl"
 short_desc="EFL System and Process Monitor"
-maintainer="mkf <makefile@risup.net>"
+maintainer="make-file <makefile@risup.net>"
 license="ISC"
 homepage="https://www.enlightenment.org"
 distfiles="https://download.enlightenment.org/rel/apps/${pkgname}/${pkgname}-${version}.tar.xz"
-checksum=5d0661aae7f065c4f84325c66ddbfa7ef8242e2885eeccc74c0826031adee431
+checksum=6a8e5be0c86bf9f858d7d5f583482ea5c53c2dac91e79fe48074b08465007f2b
 
 post_install() {
 	vlicense COPYING

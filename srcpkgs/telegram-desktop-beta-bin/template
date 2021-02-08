@@ -1,7 +1,7 @@
 # Template file for 'telegram-desktop-beta-bin'
 pkgname=telegram-desktop-beta-bin
-version=2.5.5
-revision=3
+version=2.5.6
+revision=1
 archs="x86_64"
 wrksrc=Telegram
 depends="desktop-file-utils glib hicolor-icon-theme dbus-glib dbus libX11"
@@ -10,7 +10,7 @@ maintainer="mkf <makefile@riseup.net>"
 license="GPL-3.0-only, OpenSSL"
 homepage="https://github.com/telegramdesktop/tdesktop"
 distfiles="https://github.com/telegramdesktop/tdesktop/releases/download/v${version}/tsetup.${version}.beta.tar.xz"
-checksum=50900093e2c2bd6ebb26f8738a1797934830761778b0de1de509e994102c2831
+checksum=29f04d6d39d9ef5bffff3e8aaf9c88c0fad4e7cd44a44fbf123ad04b67673599
 nostrip="yes"
 
 do_install() {

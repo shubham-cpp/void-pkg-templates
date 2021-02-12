@@ -17,7 +17,7 @@ xbps-install base-devel xtools
 ```
 clone repo and bootstrap
 ```
-git clone --depth 1 nvoid
+git clone --depth 1 https://github.com/not-void/void-packages
 cd nvoid
 ./xbps-src binary-bootstrap
 ```

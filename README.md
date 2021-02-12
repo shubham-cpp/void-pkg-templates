@@ -16,7 +16,9 @@ fetch nvoid as well
 git clone --depth 1 https://github.com/not-void/nvoid
 ```
 merge them
+```
 cp -r nvoid/srcpkgs/*  void-packages/srcpkgs
+cat nvoid/custom-shlibs >> void-packages/etc/shlibs
 ```
 install `xtools` and `base-devel`
 ```
@@ -28,3 +30,4 @@ cd void-packages
 ./xbps-src pkg <pkgname>
 xi <pkgname>
 ```
+

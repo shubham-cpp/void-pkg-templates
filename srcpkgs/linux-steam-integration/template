@@ -14,23 +14,21 @@ distfiles="https://github.com/clearlinux/${pkgname}/releases/download/v${version
 checksum=be8f391ad786c09aa74aec83dc9077adf0863f92f297a1d361dfd61ed1108d41
 
 do_configure() {
-        meson build --prefix=/usr \
-                -Dwith-shim=co-exist \
-                -Dwith-frontend=true \
-                -Dwith-steam-binary=/usr/lib/steam/steam \
-                -Dwith-new-libcxx-abi=true
+	meson build --prefix=/usr \
+		-Dwith-shim=co-exist \
+		-Dwith-frontend=true \
+		-Dwith-steam-binary=/usr/lib/steam/steam \
+		-Dwith-new-libcxx-abi=true
 
-
-  # 32-bit build
-        export CC="gcc -m32"
-        export CXX="g++ -m32"
-        export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+	# 32-bit build
+	export CC="gcc -m32"
+	export CXX="g++ -m32"
+	export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 	mkdir build32
-        meson build32 --prefix /usr \
-                -Dwith-shim=none \
-                --libexecdir /usr/lib32 \
-                --libdir /usr/lib32
-
+	meson build32 --prefix /usr \
+		-Dwith-shim=none \
+		--libexecdir /usr/lib32 \
+		--libdir /usr/lib32
 }
 
 do_build() {
@@ -41,4 +39,4 @@ do_build() {
 do_install() {
 	DESTDIR="$DESTDIR" ninja -C build install
 	DESTDIR="$DESTDIR" ninja -C build32 install
-} 
+}

@@ -1,1 +1,0 @@
-hostmakedepends+=" ghc stack"

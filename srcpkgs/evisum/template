@@ -1,6 +1,6 @@
 # Template file for 'evisum'
 pkgname=evisum
-version=0.5.10
+version=0.5.11
 revision=1
 build_style=meson
 hostmakedepends="pkg-config gettext"
@@ -11,7 +11,7 @@ maintainer="make-file <makefile@risup.net>"
 license="ISC"
 homepage="https://www.enlightenment.org"
 distfiles="https://download.enlightenment.org/rel/apps/${pkgname}/${pkgname}-${version}.tar.xz"
-checksum=9023b9e54bd09d14215cb46a789afa48df4589378a921dcfed016425ef865e36
+checksum=8c23989c6ffec73f6a2ba9e938f4feb70d6da7f2b441a1429ac0513bd2786e31
 
 post_install() {
 	vlicense COPYING

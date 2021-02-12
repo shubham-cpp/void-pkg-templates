@@ -9,8 +9,8 @@ maintainer="make-file <makefile@riseup.net>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/NathanRVance/eminence-blue"
 distfiles="https://github.com/NathanRVance/eminence-blue/releases/download/v${version}/eminence-elementary.edj"
-skip_extraction="eminence-elementary.edj"
 checksum=81d45df5a65d47b998e1c8c1a1188d9489f5ed2a0d1753c61948adf4e861ee60
+skip_extraction="eminence-elementary.edj"
 
 do_install() {
 	vmkdir usr/share/elementary/themes

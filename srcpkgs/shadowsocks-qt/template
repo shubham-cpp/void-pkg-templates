@@ -2,9 +2,10 @@
 pkgname=shadowsocks-qt
 version=3.0.1
 revision=2
+archs="x86_64"
 wrksrc="shadowsocks-qt5-${version}"
 build_style="cmake"
-makedepends="cmake pkg-config qt5-dbus qt5-network qt5-core qt5-gui qt5-devel libQtShadowsocks-devel qrencode-devel libzbar-devel"
+makedepends="pkg-config qt5-dbus qt5-network qt5-core qt5-gui qt5-devel libQtShadowsocks-devel qrencode-devel libzbar-devel"
 depends="libQtShadowsocks"
 short_desc="Fast, reliable and cross-platform GUI fronted for Shadowsocks"
 maintainer="make-file <makefile@riseup.net>"

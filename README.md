@@ -1,18 +1,25 @@
 # void-pkg-templates
 Custom templates for several packages that could be installed using xbps-src
 
-# installation process
+# Installation Process
 ```bash
 # I would Highly recommend to install xtools
- sudo xbps-install -S xtoos
- git clone git://github.com/void-linux/void-packages.git
- cd void-packages
- ./xbps-src binary-bootstrap
- echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
- git clone https://github.com/shubham-cpp/void-pkg-templates ~/Download/templates
- cp -r ~/Downloads/templates/* --target-directory void-packages/srcpkgs
- ./xbps-src pkg <package_name>
- sudo xi <package_name>
+sudo xbps-install -S xtools
+git clone git://github.com/void-linux/void-packages.git
+cd void-packages
+```
+
+```bash
+./xbps-src binary-bootstrap
+echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+
+```
+
+```bash
+git clone https://github.com/shubham-cpp/void-pkg-templates ~/Download/templates
+cp -r ~/Downloads/templates/* --target-directory void-packages/srcpkgs
+./xbps-src pkg <package_name>
+sudo xi <package_name>
 ```
 
 # Template Packages Description

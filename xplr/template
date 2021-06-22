@@ -16,7 +16,7 @@ homepage="https://github.com/sayanarijit/xplr"
 checksum=af7c7cb98a1e7b003c9ae1294fb7f7091ed48fe89ec01bfccac9aba154162c87
 
 do_fetch() {
-    echo $(pwd)
+    mkdir ${wrksrc}
     cd ${wrksrc}
     curl -OLC - ${homepage}/releases/download/v${version}/${pkgname}-linux.tar.gz
     curl -OLC - ${homepage}/raw/v${version}/LICENSE

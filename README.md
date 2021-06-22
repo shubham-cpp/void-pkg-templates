@@ -5,12 +5,12 @@ Custom templates for several packages that could be installed using xbps-src
 ```bash
 # I would Highly recommend to install xtools
 sudo xbps-install -S xtools
-git clone git://github.com/void-linux/void-packages.git
-cd void-packages
+git clone git://github.com/void-linux/void-packages.git ~/void-packages
 ```
 
 ## Post Install
 ```bash
+cd ~/void-packages
 ./xbps-src binary-bootstrap
 ```
 

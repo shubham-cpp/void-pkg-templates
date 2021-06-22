@@ -1,0 +1,37 @@
+# Template file for 'xplr'
+pkgname=xplr
+version=0.14.2
+revision=1
+archs="x86_64"
+wrksrc=${pkgname}
+create_wrksrc=yes
+makedepends="libgcc-devel"
+hostmakedepends="curl tar"
+# depends=""
+short_desc="A hackable, minimal, fast TUI file explorer written in Rust"
+maintainer="Shubham Pawar <shubhampawar3007@gmail.com>"
+license="MIT"
+homepage="https://github.com/sayanarijit/xplr"
+# distfiles="${homepage}/releases/download/v${version}/${pkgname}-linux.tar.gz"
+checksum=af7c7cb98a1e7b003c9ae1294fb7f7091ed48fe89ec01bfccac9aba154162c87
+
+do_fetch() {
+    echo $(pwd)
+    cd ${wrksrc}
+    curl -OLC - ${homepage}/releases/download/v${version}/${pkgname}-linux.tar.gz
+    curl -OLC - ${homepage}/raw/v${version}/LICENSE
+    curl -OLC - ${homepage}/raw/v${version}/README.md
+    curl -OLC - ${homepage}/raw/v${version}/src/init.lua
+    curl -OLC - ${homepage}/raw/v${version}/assets/desktop/${pkgname}.desktop
+}
+
+do_install() {
+    echo $(pwd)
+    cd ${wrksrc}
+	tar fxz ${pkgname}-linux.tar.gz
+    vbin xplr
+    vdoc README.md
+    vsconf init.lua
+    vlicense LICENSE
+    vinstall ${pkgname}.desktop 644 /usr/share/applications
+}

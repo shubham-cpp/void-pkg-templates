@@ -24,9 +24,8 @@ sudo xi <package_name>
 
 # Template Packages Description
 
-1. [xcolor](https://github.com/Soft/xcolor) : Simple X color picker written in rust
-2. [vpm](https://github.com/netzverweigerer/vpm) : An XBPS package management helper for VoidLinux. For some reason the default vpm package doesn't have bash completion, so added it
-3. [xplr](https://github.com/sayanarijit/xplr) : A hackable, minimal, fast TUI file explorer
+- [xcolor](https://github.com/Soft/xcolor) : Simple X color picker written in rust
+- [xplr](https://github.com/sayanarijit/xplr) : A hackable, minimal, fast TUI file explorer
 
 # References
 - https://github.com/void-linux/void-packages

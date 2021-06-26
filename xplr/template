@@ -1,8 +1,8 @@
 # Template file for 'xplr'
 pkgname=xplr
-version=0.14.2
+version=0.14.3
 revision=1
-archs="i686* x86_64*"
+archs="x86_64*"
 hostmakedepends="tar"
 makedepends="libgcc-devel"
 short_desc="Hackable, minimal, fast TUI file explorer written in Rust"

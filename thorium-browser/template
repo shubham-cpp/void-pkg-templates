@@ -1,0 +1,40 @@
+# Template file for 'thorium-browser'
+pkgname=thorium-browser
+version=121.0.6167.204
+revision=1
+archs="x86_64"
+hostmakedepends="tar xz"
+short_desc="Chromium fork named after radioactive element No. 90"
+maintainer="Shubham Pawar <shubhampawar3007@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://thorium.rocks/"
+#changelog=""
+distfiles="https://github.com/Alex313031/thorium/releases/download/M121.0.6167.204/thorium-browser_${version}_AVX.deb"
+checksum=ee897eda8673d287588d1eb7f6d5761c0e5f7b8018c00c7ee155a2ce10ca6ec5
+nostrip=yes
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/thorium-browser_${version}_AVX.deb
+}
+
+do_install() {
+	tar xf data.tar.xz -C ${DESTDIR}
+
+	# Install the icons
+	for size in 24 32 48 64 128 256; do
+		# Create the brave browser xdg directory
+		mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
+
+		# Copy the brave browser icon
+		mv ${DESTDIR}/opt/chromium.org/thorium/product_logo_${size}.png \
+		${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/thorium-browser.png
+	done
+
+	# Remove unused icons
+	rm ${DESTDIR}/opt/chromium.org/thorium/*.xpm
+
+	# Remove the Debian/Ubuntu crontab
+	rm -rf ${DESTDIR}/etc
+	rm -rf ${DESTDIR}/opt/chromium.org/thorium/cron
+}
